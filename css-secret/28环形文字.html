@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 3em;
+    }
+    .box1 {
+      width: 30em;
+      height: 30em;
+      margin: 3em auto 0;
+    }
+
+    .box1 path {
+      fill: none;
+    }
+
+    .box1 svg {
+      display: block;
+      overflow: visible;
+      transition: 10s linear transform;
+    }
+
+    .box1 svg:hover {
+      transform: rotate(-2turn);
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="box1">
+    <svg viewBox="0 0 100 100">
+      <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+      <text>
+        <textpath xlink:href="#circle">circular reasoning works because really cool !</textpath>
+      </text>
+    </svg>
+  </div>
+</body>
+</html>

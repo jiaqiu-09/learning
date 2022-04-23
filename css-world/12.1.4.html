@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .rtl {
+      direction: rtl;
+      unicode-bidi: bidi-override;
+    }
+
+    .rtl>span {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="rtl">开头是我，<span style="unicode-bidi:normal;">这是中间</span>，然后是结束</p>
+  <p class="rtl">开头是我，<span style="unicode-bidi:embed;">这是中间</span>，然后是结束</p>
+  <p class="rtl">开头是我，<span>&#x202B;这是中间&#x202C;</span>，然后是结束</p>
+  <p>&#x202E;一二三四五六七八九十</p>
+  <p style="writing-mode: vertical-lr;">hello 你好</p>
+</body>
+
+</html>

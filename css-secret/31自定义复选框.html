@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[type="checkbox"] + label::before {
+      content: '\a0';
+      overflow: hidden;
+      /* vertical-align: .2em; */
+      display: inline-block;
+      width: .8em;
+      height: .8em;
+      margin-right: .2em;
+      border-radius: .2em;
+      background: silver;
+      line-height: .65;
+      text-indent: .1em;
+    }
+
+    input[type="checkbox"]:checked + label::before {
+      content: '\2713';
+      background: yellowgreen;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+    }
+
+    input[type="checkbox"]:focus + label::before {
+      box-shadow: 0 0 .1em .1em #58a;
+    }
+
+    input[type="checkbox"]:disabled + label::before {
+      color: #555;
+      box-shadow: none;
+      background: gray;
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="awesome" />
+  <label for="awesome">Awesome!</label>
+
+  <input type="checkbox" id="cool" checked disabled />
+  <label for="cool">Cool!</label>
+</body>
+</html>

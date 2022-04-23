@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 1em;
+    }
+    div {
+      margin-bottom: 20px;
+    }
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      position: relative;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+    }
+
+    .box1::after {
+      content: "";
+      border-color: transparent transparent transparent orange;
+      border-width: 10px;
+      border-style: solid;
+      position: absolute;
+      right: -20px;
+      top: 20px;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      position: relative;
+      /* box-shadow: 2px 2px 10px rgba(0, 0, 0, .5); */
+      filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, .5));
+    }
+
+    .box2::after {
+      content: "";
+      border-color: transparent transparent transparent orange;
+      border-width: 10px;
+      border-style: solid;
+      position: absolute;
+      right: -20px;
+      top: 20px;
+    }
+
+    .box3 {
+      width: 100px;
+      height: 100px;
+      background-color: transparent;
+      border: 5px dashed orange;
+      text-shadow: .1em .2em yellow;
+      /* box-shadow: 2px 2px 10px rgba(0, 0, 0, .5); */
+      filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, .5));
+    }
+
+    .box4 {
+      width: 100px;
+      height: 100px;
+      background: orange;
+      background: linear-gradient(135deg, transparent 15px, orange 0) top left,
+        linear-gradient(-135deg, transparent 15px, orange 0) top right,
+        linear-gradient(-45deg, transparent 15px, orange 0) bottom right,
+        linear-gradient(45deg, transparent 15px, orange 0) bottom left;
+      background-size: 50% 50%;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+      background-repeat: no-repeat;
+    }
+
+    .box5 {
+      width: 100px;
+      height: 100px;
+      background: orange;
+      background: linear-gradient(135deg, transparent 15px, orange 0) top left,
+        linear-gradient(-135deg, transparent 15px, orange 0) top right,
+        linear-gradient(-45deg, transparent 15px, orange 0) bottom right,
+        linear-gradient(45deg, transparent 15px, orange 0) bottom left;
+      background-size: 50% 50%;
+      filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, .5));
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3">hello aa </div>
+  <div class="box4"></div>
+  <div class="box5"></div>
+</body>
+</html>

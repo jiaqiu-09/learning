@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      color: red;
+      background-color: orange;
+      width: 200px;
+      height: 200px;
+    }
+
+    .enter-from {
+      transform: translateX(200px);
+    }
+
+    .enter-to {
+      transform: translateX(0px);
+    }
+
+    .enter-active {
+      transition: transform 1s ease-in-out;
+    }
+
+    .leave-from {
+      transform: translateX(0px);
+    }
+
+    .leave-to {
+      transform: translateX(200px);
+    }
+
+    .leave-active {
+      transition: transform 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://unpkg.com/@vue/reactivity@3.0.5/dist/reactivity.global.js"></script>
+  <script src="https://unpkg.com/vue@3"></script>
+  <div id="app"></div>
+  <h1>==================</h1>
+  <div id="case"></div>
+  <h1>==================</h1>
+  <div id="case1"></div>
+  <button onclick="showBox()">show</button>
+  <!-- <script src="./proxy1.js"></script> -->
+  <!-- <script src="./proxy2.js"></script> -->
+  <!-- <script src="./proxy3.js"></script> -->
+  <!-- <script src="./proxy4.js"></script> -->
+  <!-- <script src="./proxy5.js"></script> -->
+  <!-- <script src="./proxy6.js"></script> -->
+  <!-- <script src="./proxy7.js"></script> -->
+  <!-- <script src="./proxy8.js"></script> -->
+  <!-- <script src="./proxy9.js"></script> -->
+  <!-- <script src="./chapter4/proxy10.js"></script> -->
+  <!-- <script src="./chapter5/index1.js"></script> -->
+  <!-- <script src="./chapter5/index2.js"></script> -->
+  <!-- <script src="./chapter5/index3.js"></script> -->
+  <!-- <script src="./chapter5/index4.js"></script> -->
+  <!-- <script src="./chapter5/index5.js"></script> -->
+  <!-- <script src="./chapter5/index6.js"></script> -->
+  <!-- <script src="./chapter5/index7.js"></script> -->
+  <!-- <script src="./chapter5/index8.js"></script> -->
+  <!-- <script src="./chapter5/index9.js"></script> -->
+  <!-- <script src="./chapter5/index10.js"></script> -->
+  <!-- <script src="./chapter5/index11.js"></script> -->
+  <!-- <script src="./chapter5/index12.js"></script> -->
+  <!-- <script src="./chapter5/index13.js"></script> -->
+  <!-- <script src="./chapter5/index14.js"></script> -->
+  <!-- <script src="./chapter6/index1.js"></script> -->
+  <!-- <script src="./chapter8/index1.js"></script> -->
+  <!-- <script src="./chapter8/index2.js"></script> -->
+  <!-- <script src="./chapter8/index3.js"></script> -->
+  <!-- <script src="./chapter8/index4.js"></script> -->
+  <!-- <script src="./chapter8/index5.js"></script> -->
+  <!-- <script src="./chapter8/index6.js"></script> -->
+  <!-- <script src="./chapter8/index7.js"></script> -->
+  <!-- <script src="./chapter9/index1.js"></script> -->
+  <!-- <script src="./chapter9/index2.js"></script> -->
+  <!-- <script src="./chapter10/index1.js"></script> -->
+  <!-- <script src="./chapter10/index2.js"></script> -->
+  <!-- <script src="./chapter10/index3.js"></script> -->
+  <!-- <script src="./chapter11/index1.js"></script> -->
+  <!-- <script src="./chapter11/index2.js"></script> -->
+  <!-- <script src="./chapter11/index3.js"></script> -->
+  <!-- <script src="./chapter11/index4.js"></script> -->
+  <!-- <script src="./chapter11/index5.js"></script> -->
+  <script src="./chapter18/index1.js"></script>
+  <div id="app1" >
+    <my-com >
+      <template #header>
+        <h1>header</h1>
+      </template>
+    </my-com>
+  </div>
+  <script>
+    console.log('vue', Vue)
+    const app = Vue.createApp({})
+    app.component('my-com', {
+      setup(props, context) {
+        Vue.onMounted(() => {
+          console.log('mounted 1')
+        })
+        Vue.onMounted(() => {
+          console.log('mounted 2')
+        })
+        console.log('props', props)
+        console.log('context', context)
+        const state = Vue.reactive({ count: 0 })
+        function increment() {
+          state.count++
+        }
+
+        return {
+          state,
+          increment
+        }
+      },
+      template: `<div @click="increment">
+        {{state.count}}
+        <header><slot name="header"></slot></header>
+        </div>`
+    })
+
+    app.mount('#app1')
+  </script>
+  <script>
+    function showBox() {
+      const el = document.createElement('div')
+      el.classList.add('box')
+      el.classList.add('enter-from')
+      el.classList.add('enter-active')
+
+      el.addEventListener('click', () => {
+        const removeNode = () => el.parentNode.removeChild(el)
+
+        el.classList.add('leave-from')
+        el.classList.add('leave-active')
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            el.classList.remove('leave-from')
+            el.classList.add('leave-to')
+
+            el.addEventListener('transitionend', () => {
+              el.classList.remove('leave-to')
+              el.classList.remove('leave-active')
+
+              removeNode()
+            })
+          })
+        })
+      })
+
+      document.body.appendChild(el)
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          el.classList.remove('enter-from')
+          el.classList.add('enter-to')
+        })
+
+        el.addEventListener('transitionend', () => {
+          el.classList.remove('enter-active')
+          el.classList.remove('enter-to')
+        })
+      })
+    }
+    
+
+  </script>
+
+</body>
+</html>

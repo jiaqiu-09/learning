@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    div {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    @keyframes blink-smooth {
+      50% {
+        color: transparent;
+      }
+    }
+
+    .highlight {
+      animation: 1s blink-smooth 3;
+      animation-direction: reverse;
+    }
+
+    .highlight2 {
+      animation: 1s blink-smooth 3 steps(1);
+      animation-direction: reverse;
+    }
+  </style>
+</head>
+<body>
+  <div class="highlight">
+    hello
+  </div>
+
+  <div class="highlight2">
+    hello
+  </div>
+</body>
+</html>

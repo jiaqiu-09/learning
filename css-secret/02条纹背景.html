@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .container div {
+      margin-bottom: 10px;
+    }
+    .div1 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(#fb3, #58a);
+    }
+
+    .div2 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(#fb3 20%, #58a 80%);
+    }
+
+    .div3 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(#fb3 50%, #58a 50%);
+    }
+
+    .div4 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(#fb3 50%, #58a 50%);
+      background-size: 100% 30px;
+      background-repeat: no-repeat;
+    }
+
+    .div5 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(#fb3 30%, #58a 30%);
+      background-size: 100% 30px;
+    }
+
+    .div6 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+      background-size: 100% 45px;
+    }
+
+    .div7 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(to right, #fb3 50%, #58a 0);
+      background-size: 30px 100%;
+    }
+
+    .div8 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(to right, #fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+      background-size: 45px 100%;
+    }
+
+    .div9 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(45deg, #fb3 50%, #58a 0);
+      background-size: 33px 33px;
+    }
+
+    .div10 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+      background-size: 40px 40px;
+    }
+
+    .div11 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+      background-size: 42.4px 42.4px;
+    }
+
+    .div12 {
+      width: 300px;
+      height: 300px;
+      background: repeating-linear-gradient(45deg, #fb3 0, #58a 30px);
+      /* background-size: 42.4px 42.4px; */
+    }
+
+    .div13 {
+      width: 300px;
+      height: 300px;
+      background: repeating-linear-gradient(45deg, #fb3 0, #fb3 15px, #58a 0, #58a 30px);
+    }
+
+    .div14 {
+      width: 300px;
+      height: 300px;
+      background: repeating-linear-gradient( #fb3 0, #fb3 15px, #58a 0, #58a 30px);
+    }
+
+    .div15 {
+      width: 300px;
+      height: 300px;
+      background: repeating-linear-gradient(transparent 0, transparent 15px, #58a 0, #58a 30px),
+      repeating-linear-gradient(90deg, transparent 0, transparent 15px, #fb3 0, #fb3 30px);
+    }
+  </style>
+</head>
+<body>
+  <h1>水平条纹</h1>
+  <div class="container">
+    <div class="div1">
+      hello
+    </div>
+    <br/>
+    <div class="div2">
+      hello
+    </div>
+    <br/>
+    <div class="div3">
+      hello
+    </div>
+    <br/>
+    <div class="div4">
+      hello
+    </div>
+    <br/>
+    <div class="div5">
+      hello
+    </div>
+    <br/>
+    <div class="div6">
+      hello
+    </div>
+    <div class="div14">
+      hello
+    </div>
+  </div>
+  <h1>垂直条纹</h1>
+  <div class="container">
+    <div class="div7">
+      hello
+    </div>
+    <div class="div8">
+      hello
+    </div>
+  </div>
+  <h1>斜条纹</h1>
+  <div class="container">
+    <div class="div9">
+      hello
+    </div>
+    <div class="div10">
+      hello
+    </div>
+    <div class="div11">
+      hello
+    </div>
+    <div class="div12">
+      hello
+    </div>
+    <div class="div13">
+      hello
+    </div>
+  </div>
+  <h1>方格网</h1>
+  <div class="container">
+    <div class="div15">
+      hello
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .box1 {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      background: #58a;
+      top: 50%;
+      left: 50%;
+      margin: -100px;
+      color: aqua;
+      box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .8);
+    }
+
+    dialog::backdrop {
+      background-color: rgba(0, 0, 0, .8);
+    }
+  </style>
+</head>
+<body>
+  <div>Consequat nostrud nulla sunt do magna aliquip excepteur Lorem minim occaecat veniam. Enim proident Lorem dolore qui elit mollit minim sunt incididunt Lorem. Nisi cupidatat aliquip pariatur culpa in eiusmod dolor adipisicing anim est laboris.
+
+Eiusmod incididunt tempor aliquip anim Lorem et aliquip aliqua esse in dolore sunt pariatur. Amet esse sunt Lorem dolore consectetur aute deserunt. Aute quis et quis ex veniam id eu sit duis aute. Aute amet magna est cillum labore ex incididunt magna irure consequat. Occaecat proident adipisicing adipisicing veniam Lorem adipisicing eu mollit mollit. Eiusmod id ipsum voluptate in commodo nulla.
+
+Velit non officia commodo pariatur commodo ipsum ad magna non laboris amet. Nostrud aliquip irure ut in sit pariatur velit aute minim. Eu sit commodo cupidatat tempor sint sunt duis culpa officia veniam laboris quis ex mollit. Ex sit duis pariatur tempor magna nostrud laborum eu consectetur laboris enim. Incididunt exercitation do magna mollit elit aliqua do nisi adipisicing id velit veniam sit. Cillum magna irure fugiat incididunt pariatur duis nulla exercitation adipisicing ex ad et nostrud.
+
+Irure cupidatat sunt non sunt deserunt cillum ea ad nostrud nostrud et aliquip Lorem. Magna sunt tempor qui non cupidatat proident. Veniam sint anim id ex aliqua voluptate reprehenderit amet ex aliquip occaecat ipsum minim incididunt. Non aliquip nulla sit Lorem labore ullamco do adipisicing esse. Culpa laboris aute ea enim aliquip id laboris. Do nostrud duis dolore aute veniam commodo deserunt esse ex adipisicing culpa qui in.</div>
+  <!-- <div class="box1">
+    use box-shadow 
+  </div> -->
+  <button onclick="document.getElementById('modal').showModal()">click me</button>
+  <dialog id="modal">
+    <p>use backdrop,Greetings, one and all!</p>
+    <form method="dialog">
+      <button>OK</button>
+    </form>
+  </dialog>
+</body>
+</html>

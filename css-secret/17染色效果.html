@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .img1 {
+      width: 500px;
+      transition: .5s filter;
+      filter: sepia(1) saturate(4) hue-rotate(295deg);
+    }
+
+    .img1:hover, .img1:focus {
+      filter: none;
+    }
+
+    a {
+      display: inline-block;
+      font-size: 0;
+      background: hsl(335, 100%, 50%);
+    }
+
+    .img2 {
+      width: 500px;
+      mix-blend-mode: luminosity;
+    }
+
+    .img3 {
+      width: 500px;
+      height: 334px;
+      background-image: url('./tiger.jpeg');
+      background-color: hsl(335, 100%, 50%);
+      background-blend-mode: luminosity;
+      background-size: cover;
+      transition: .5s background-color;
+    }
+
+    .img3:hover {
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <h1>手动模式滤镜</h1>
+  <img class="img1" src="./tiger.jpeg" />
+  <h1>混合模式</h1>
+  <a href="">
+    <img class="img2" src="./tiger.jpeg" />
+  </a>
+  <h1>混合模式2</h1>
+  <div class="img3">
+
+  </div>
+</body>
+</html>

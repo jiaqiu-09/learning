@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .img {
+      width: 200px;
+      display: block;
+      /* height: auto; */
+    }
+
+    .img2 {
+
+    }
+
+    .box {
+      width: 80px;
+      height: 20px;
+      padding: 20px 60px;
+      background-color: red;
+    }
+
+    .btn {
+      position: absolute;
+      clip: rect(0,0,0,0);
+    }
+
+    label {
+      display: inline-block;
+      line-height: 20px;
+      padding: 10px;
+      border: 1px solid gray;
+    }
+
+    .menu {
+      display: inline-block;
+      width: 140px;
+      height: 10px;
+      padding: 35px 0;
+      border-top: 10px solid;
+      border-bottom: 10px solid;
+      background-color: currentColor;
+      background-clip: content-box;
+    }
+
+    .icon-dot {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 10px solid;
+      border-radius: 50%;
+      background-color: currentColor;
+      background-clip: content-box;
+    }
+    
+    .container1 {
+      display: inline-block;
+      /* width: 340px; */
+      height: 100px;
+      margin-right: -20px;
+    }
+
+    .container1 > div {
+      width: 100px;
+      float: left;
+      background-color: red;
+      margin-right: 20px;
+    }
+
+    .menu2 {
+      display: inline-block;
+      width: 120px;
+      height: 20px;
+      border-top: 60px double;
+      border-bottom: 20px solid;
+    }
+
+    .triangle {
+      width: 0;
+      border:  10px solid;
+      border-color: red transparent transparent;
+    }
+  </style>
+</head>
+<body>
+  <img class="img" width="200"  src="./1.png" />
+  <img class="img2" />
+  <div class="box"></div>
+  <button>登录</button>
+  <button class="btn" id="btn"></button>
+  <label for="btn">登录</label>
+
+  <div>
+    <span class="menu"></span>
+    <span class="icon-dot"></span>
+  </div>
+
+  <div>
+    <div class="container1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </div>
+
+  <!-- <div class="box1">
+    <img style="float: left;width: 256px;" src="./1.png" />
+    <p style="overflow: hidden;margin-left: 200px;">内容</p>
+  </div> -->
+
+
+  <div>
+    <span class="menu2"></span>
+  </div>
+  <div class="triangle"></div>
+</body>
+</html>

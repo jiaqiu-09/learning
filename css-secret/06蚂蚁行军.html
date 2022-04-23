@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes ants {
+      to {
+        background-position: 100%;
+      }
+    }
+    .box1 {
+      padding: 1em;
+      border: 1px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(-45deg, black 0, black 25%,
+        white 0, white 50%) 0 / 0.6em 0.6em;
+      animation: ants 20s linear infinite;
+    }
+
+    .box2 {
+      border: .2em solid transparent;
+      border-image: linear-gradient(90deg, currentColor 4em, transparent 0) 100% 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+    Dolor ea amet nulla anim. Consectetur do et enim in velit adipisicing est deserunt amet reprehenderit sit nisi eu dolor. Ad exercitation anim minim commodo cupidatat ipsum voluptate nulla do.
+  </div>
+  <br />
+  <div class="box2">
+    Dolor ea amet nulla anim. Consectetur do et enim in velit adipisicing est deserunt amet reprehenderit sit nisi eu dolor. Ad exercitation anim minim commodo cupidatat ipsum voluptate nulla do.
+  </div>
+</body>
+</html>

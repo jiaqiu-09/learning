@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .vh {
+      visibility: hidden;
+    }
+
+    .dn {
+      display: none;
+    }
+
+    ol {
+      border: 1px solid;
+      margin: 1em 0;
+      counter-reset: test;
+    }
+
+    li::after {
+      content: counter(test);
+      counter-increment: test;
+    }
+  </style>
+</head>
+<body>
+  <ol>
+    <li>列表</li>
+    <li class="dn">列表</li>
+    <li>列表</li>
+    <li>列表</li>
+  </ol>
+  <ol>
+    <li>列表</li>
+    <li class="vh">列表</li>
+    <li>列表</li>
+    <li>列表</li>
+  </ol>
+</body>
+</html>

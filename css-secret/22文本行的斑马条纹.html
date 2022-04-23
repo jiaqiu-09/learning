@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p, pre {
+      white-space: pre;
+      line-height: 1.5;
+      background: beige;
+      background-image: linear-gradient(rgba(0,0,0,0.2) 50%, transparent 0);
+      background-size: auto 3em;
+      padding: .5em;
+      background-origin: content-box;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>
+      while(true) {
+        var d = new Date();
+        if (d.getDate() == 1 &&
+          d.getMonth() == 3
+        ) {
+          alert('well done!');
+        }
+      }
+      console.log('
+        it is
+        really 
+        cool!
+      ')
+    </p>
+
+    <pre>
+      <code>
+        while(true) {
+        var d = new Date();
+        if (d.getDate() == 1 &&
+          d.getMonth() == 3
+        ) {
+          alert('well done!');
+        }
+      }
+      console.log('
+        it is
+        really 
+        cool!
+      ')
+      </code>
+      
+    </pre>
+  </div>
+</body>
+</html>

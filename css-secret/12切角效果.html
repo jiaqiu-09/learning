@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      margin-bottom: 10px;
+    }
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background: red;
+      background: linear-gradient(-45deg, #58a 0, #58a 15px, red 0, red 100%);
+    }
+
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background: red;
+      background: linear-gradient(45deg, #655 0, #655 15px, red 0, red 100%);
+    }
+
+    .box3 {
+      width: 200px;
+      height: 200px;
+      background: red;
+      background: linear-gradient(-45deg, #58a 0, #58a 15px, red 0, red 100%),
+        linear-gradient(45deg, #655 0, #655 15px, red 0, red 100%);
+    }
+
+    .box4 {
+      width: 200px;
+      height: 200px;
+      background: red;
+      background: linear-gradient(135deg, transparent 15px, red 0) top left,
+        linear-gradient(-135deg, transparent 15px, red 0) top right,
+        linear-gradient(-45deg, transparent 15px, red 0) bottom right,
+        linear-gradient(45deg, transparent 15px, red 0) bottom left;
+
+      /* background: linear-gradient(135deg, transparent 15px, #58a 0)
+        top left,
+    linear-gradient(-135deg, transparent 15px, #58a 0)
+        top right; */
+    /* linear-gradient(-45deg, transparent 15px, #58a 0)
+        bottom right,
+    linear-gradient(45deg, transparent 15px, #58a 0)
+        bottom left; */
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+    .box5 {
+      width: 200px;
+      height: 200px;
+      background: red;
+      background: radial-gradient(circle at top left, transparent 15px , red 0) top left,
+        radial-gradient(circle at top right, transparent 15px , red 0) top right,
+        radial-gradient(circle at bottom right, transparent 15px , red 0) bottom right,
+        radial-gradient(circle at bottom left, transparent 15px , red 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+    .box6 {
+      width: 200px;
+      height: 200px;
+      border: 20px solid transparent;
+      border-image: 1 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="3" height="3" fill="%2358a"><polygon points="0,1 1,0 2,0 3,1 3,2 2,3 1,3 0,2"/></svg>');
+      background: #58a;
+      background-clip: padding-box;
+    }
+
+    .box7 {
+      width: 200px;
+      height: 200px;
+      background: #58a;
+      clip-path: polygon(20px 0, calc(100% - 20px) 0, 
+        100% 20px, 100% calc(100% - 20px),
+        calc(100% - 20px) 100%, 20px 100%,
+        0 calc(100% - 20px), 0 20px);
+    }
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <div class="box4"></div>
+  <h1>弧形切角</h1>
+  <div class="box5"></div>
+  <div class="box6"></div>
+  <h1>clip path</h1>
+  <div class="box7"></div>
+</body>
+</html>

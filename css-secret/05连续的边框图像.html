@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      background: url('./1.png');
+      background-size: cover;
+      padding: 1em;
+    }
+
+    .box1 div {
+      background-color: white;
+      padding: 1em;
+    }
+
+    .box2 {
+      padding: 1em;
+      border: 1em solid transparent;
+      background: linear-gradient(white, white),
+        url('./1.png');
+      background-size: cover;
+      background-clip: padding-box, border-box;
+      background-origin: border-box;
+    }
+
+    .box3 {
+      padding: 1em;
+      border: 1em solid transparent;
+      background: linear-gradient(white, white) padding-box, url('./1.png') border-box 0 / cover;
+      background-origin: border-box;
+    }
+
+    .box4 {
+      padding: 1em;
+      border: 1em solid transparent;
+      background: linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(-45deg,
+          red 0, red 12.5%,
+          transparent 0, transparent 25%,
+          #58a 0, #58a 37.5%,
+          transparent 0, transparent 50%)
+        0 / 5em 5em;
+    }
+
+    .box5 {
+      padding: 1em;
+      border: 16px solid transparent;
+      border-image: 16 repeating-linear-gradient(-45deg, 
+      red 0 , red 1em,
+      transparent 0, transparent 2em,
+      #58a 0, #58a 3em,
+      transparent 0, transparent 4em);
+    }
+  </style>
+</head>
+<body>
+  <h1>case 1</h1>
+  <div class="box1">
+    <div>Sint nostrud occaecat nisi quis sit magna mollit aute enim esse. Nostrud dolor anim irure id ad consequat voluptate proident veniam in officia. Sunt consectetur et dolore et anim voluptate aliqua ut deserunt nostrud ea Lorem. Sunt in velit et enim esse dolore. Excepteur tempor incididunt duis officia commodo Lorem. Ullamco nulla minim laborum ea non officia dolore et ex. Occaecat adipisicing consequat ullamco nostrud est commodo.</div>
+  </div>
+  <br />
+  <div class="box1">
+    <div>Aliquip est deserunt consectetur in. Excepteur exercitation sint officia irure nostrud enim elit anim incididunt sunt dolore est. Nisi labore amet sint do qui mollit dolore magna. Nisi sint aliqua amet dolore ullamco occaecat Lorem proident nostrud est consequat ipsum anim labore. Ea mollit deserunt ad ipsum voluptate consectetur minim dolore occaecat. Cupidatat ut reprehenderit mollit occaecat.
+
+Anim deserunt culpa fugiat Lorem exercitation amet culpa reprehenderit excepteur eu ullamco aliqua. Consequat officia culpa reprehenderit consectetur nostrud ea sint cupidatat aliqua nostrud reprehenderit aliquip enim. Nulla ad exercitation nulla eiusmod magna quis veniam nulla ut pariatur culpa. Occaecat aliqua occaecat aliqua fugiat. Ut do labore id sit quis aliquip ex amet eiusmod cillum duis veniam.
+
+In reprehenderit non veniam mollit consectetur. Labore do nostrud et exercitation excepteur pariatur pariatur nostrud veniam ullamco consectetur dolore do laboris. Reprehenderit amet incididunt cupidatat et nulla velit eu cillum duis nulla ex. Ipsum ea labore amet ex sint ut ullamco cupidatat. Nostrud elit elit qui minim ipsum ex culpa mollit quis.</div>
+  </div>
+
+  <h1>case 2</h1>
+  <div class="box2">
+    Pariatur ea excepteur elit adipisicing aute occaecat Lorem elit amet ullamco esse ad eiusmod laboris. Ipsum in culpa sit fugiat ipsum cupidatat enim consequat aliqua ex anim veniam occaecat fugiat. Velit sit voluptate Lorem irure anim fugiat eu occaecat quis deserunt mollit esse enim ex. Officia veniam elit laborum commodo reprehenderit cillum ut esse sit.
+  </div>
+  <br />
+  <div class="box2">Aliquip est deserunt consectetur in. Excepteur exercitation sint officia irure nostrud enim elit anim incididunt sunt dolore est. Nisi labore amet sint do qui mollit dolore magna. Nisi sint aliqua amet dolore ullamco occaecat Lorem proident nostrud est consequat ipsum anim labore. Ea mollit deserunt ad ipsum voluptate consectetur minim dolore occaecat. Cupidatat ut reprehenderit mollit occaecat.
+
+    Anim deserunt culpa fugiat Lorem exercitation amet culpa reprehenderit excepteur eu ullamco aliqua. Consequat officia culpa reprehenderit consectetur nostrud ea sint cupidatat aliqua nostrud reprehenderit aliquip enim. Nulla ad exercitation nulla eiusmod magna quis veniam nulla ut pariatur culpa. Occaecat aliqua occaecat aliqua fugiat. Ut do labore id sit quis aliquip ex amet eiusmod cillum duis veniam.
+    
+    In reprehenderit non veniam mollit consectetur. Labore do nostrud et exercitation excepteur pariatur pariatur nostrud veniam ullamco consectetur dolore do laboris. Reprehenderit amet incididunt cupidatat et nulla velit eu cillum duis nulla ex. Ipsum ea labore amet ex sint ut ullamco cupidatat. Nostrud elit elit qui minim ipsum ex culpa mollit quis.
+  </div> 
+  <br />
+  <div class="box3">Aliquip est deserunt consectetur in. Excepteur exercitation sint officia irure nostrud enim elit anim incididunt sunt dolore est. Nisi labore amet sint do qui mollit dolore magna. Nisi sint aliqua amet dolore ullamco occaecat Lorem proident nostrud est consequat ipsum anim labore. Ea mollit deserunt ad ipsum voluptate consectetur minim dolore occaecat. Cupidatat ut reprehenderit mollit occaecat.
+
+    Anim deserunt culpa fugiat Lorem exercitation amet culpa reprehenderit excepteur eu ullamco aliqua. Consequat officia culpa reprehenderit consectetur nostrud ea sint cupidatat aliqua nostrud reprehenderit aliquip enim. Nulla ad exercitation nulla eiusmod magna quis veniam nulla ut pariatur culpa. Occaecat aliqua occaecat aliqua fugiat. Ut do labore id sit quis aliquip ex amet eiusmod cillum duis veniam.
+    
+    In reprehenderit non veniam mollit consectetur. Labore do nostrud et exercitation excepteur pariatur pariatur nostrud veniam ullamco consectetur dolore do laboris. Reprehenderit amet incididunt cupidatat et nulla velit eu cillum duis nulla ex. Ipsum ea labore amet ex sint ut ullamco cupidatat. Nostrud elit elit qui minim ipsum ex culpa mollit quis.
+  </div>
+  <br />
+  <div class="box4">Aliquip est deserunt consectetur in. Excepteur exercitation sint officia irure nostrud enim elit anim incididunt sunt dolore est. Nisi labore amet sint do qui mollit dolore magna. Nisi sint aliqua amet dolore ullamco occaecat Lorem proident nostrud est consequat ipsum anim labore. Ea mollit deserunt ad ipsum voluptate consectetur minim dolore occaecat. Cupidatat ut reprehenderit mollit occaecat.
+
+    Anim deserunt culpa fugiat Lorem exercitation amet culpa reprehenderit excepteur eu ullamco aliqua. Consequat officia culpa reprehenderit consectetur nostrud ea sint cupidatat aliqua nostrud reprehenderit aliquip enim. Nulla ad exercitation nulla eiusmod magna quis veniam nulla ut pariatur culpa. Occaecat aliqua occaecat aliqua fugiat. Ut do labore id sit quis aliquip ex amet eiusmod cillum duis veniam.
+    
+    In reprehenderit non veniam mollit consectetur. Labore do nostrud et exercitation excepteur pariatur pariatur nostrud veniam ullamco consectetur dolore do laboris. Reprehenderit amet incididunt cupidatat et nulla velit eu cillum duis nulla ex. Ipsum ea labore amet ex sint ut ullamco cupidatat. Nostrud elit elit qui minim ipsum ex culpa mollit quis.
+  </div>
+  <br />
+  <div class="box5">Aliquip est deserunt consectetur in. Excepteur exercitation sint officia irure nostrud enim elit anim incididunt sunt dolore est. Nisi labore amet sint do qui mollit dolore magna. Nisi sint aliqua amet dolore ullamco occaecat Lorem proident nostrud est consequat ipsum anim labore. Ea mollit deserunt ad ipsum voluptate consectetur minim dolore occaecat. Cupidatat ut reprehenderit mollit occaecat.
+
+    Anim deserunt culpa fugiat Lorem exercitation amet culpa reprehenderit excepteur eu ullamco aliqua. Consequat officia culpa reprehenderit consectetur nostrud ea sint cupidatat aliqua nostrud reprehenderit aliquip enim. Nulla ad exercitation nulla eiusmod magna quis veniam nulla ut pariatur culpa. Occaecat aliqua occaecat aliqua fugiat. Ut do labore id sit quis aliquip ex amet eiusmod cillum duis veniam.
+    
+    In reprehenderit non veniam mollit consectetur. Labore do nostrud et exercitation excepteur pariatur pariatur nostrud veniam ullamco consectetur dolore do laboris. Reprehenderit amet incididunt cupidatat et nulla velit eu cillum duis nulla ex. Ipsum ea labore amet ex sint ut ullamco cupidatat. Nostrud elit elit qui minim ipsum ex culpa mollit quis.
+  </div>
+</body>
+</html>

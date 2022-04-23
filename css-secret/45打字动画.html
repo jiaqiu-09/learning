@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+
+    @keyframes cart {
+      50% {
+        color: transparent;
+      }
+    }
+
+    .box1 {
+      width: 15ch;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .05em solid;
+      animation: typing 6s steps(15),
+        cart 1s steps(1) infinite;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="box1">CSS is awesome!</h1>
+</body>
+</html>

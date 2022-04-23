@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      margin-bottom: 20px;
+    }
+
+    .box1, .box2 {
+      width: 300px;
+    }
+
+    .box1 p {
+      background: hsl(210, 13%, 60%);
+      color: hsl(210, 13%, 30%);
+      /* text-shadow: 0 1px 1px hsla(0, 0%, 100%, .8); */
+      text-shadow: 0 .03em .03em hsla(0, 0%, 100%, .8);
+    }
+
+    .box2 p {
+      background: hsl(210, 13%, 40%);
+      color: hsl(210, 13%, 75%);
+      text-shadow: 0 -1px 1px black;
+    }
+
+    .box3 {
+      background: deeppink;
+      color: white;
+      text-shadow: 1px 1px black, -1px -1px black,
+        1px -1px black, -1px 1px black;
+    }
+
+    .box4 h1, .box5 h1, .box6 h1 {
+      background: #203;
+      color: white;
+      transition: 1s;
+    }
+
+    .box4 h1:hover {
+      text-shadow: 0 0 .1em, 0 0 .3em;
+    }
+
+    .box5 h1:hover {
+      color: transparent;
+      text-shadow: 0 0 .1em white, 0 0 .3em white;
+    }
+
+    .box6 h1:hover {
+      filter: blur(.1em);
+    }
+
+    .box7 h1 {
+      background: #58a;
+      color: white;
+      text-shadow: 0 1px hsl(0, 0%, 85%),
+                   0 2px hsl(0, 0%, 80%),
+                   0 3px hsl(0, 0%, 75%),
+                   0 4px hsl(0, 0%, 70%),
+                   0 5px hsl(0, 0%, 65%),
+                   0 5px 10px black;
+    }
+
+    .box8 h1 {
+      color: white;
+      background: hsl(0, 50%, 45%);
+      text-shadow: 1px 1px black, 2px 2px black,
+                   3px 3px black, 4px 4px black,
+                   5px 5px black, 6px 6px black,
+                   7px 7px black, 8px 8px black;
+    }
+
+    .box9 {
+      height: 400px;
+      width: 500px;
+      background: linear-gradient(red, transparent);
+      background-size: cover;
+      position: relative;
+    }
+
+    .box9::before {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      content: '';
+      opacity: 0;
+      z-index: 1;
+      background: linear-gradient(transparent, blue);
+      background-size: cover;
+      transition: opacity 3s linear;
+    }
+
+    .box9:hover::before {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>凸版印刷效果</h1>
+  <div class="box1">
+    <p>Exercitation enim anim amet aliqua incididunt mollit occaecat est anim laboris nisi ullamco eiusmod deserunt. Dolor laboris ea fugiat nostrud velit irure aliqua consectetur in Lorem consequat dolore esse pariatur. Fugiat occaecat aliquip consectetur tempor officia elit ullamco. Proident minim sunt incididunt adipisicing amet nulla non ex veniam nulla Lorem excepteur. Culpa eu eu id ex eiusmod aliquip et.</p>
+  </div>
+  <div class="box2">
+    <p>Exercitation enim anim amet aliqua incididunt mollit occaecat est anim laboris nisi ullamco eiusmod deserunt. Dolor laboris ea fugiat nostrud velit irure aliqua consectetur in Lorem consequat dolore esse pariatur. Fugiat occaecat aliquip consectetur tempor officia elit ullamco. Proident minim sunt incididunt adipisicing amet nulla non ex veniam nulla Lorem excepteur. Culpa eu eu id ex eiusmod aliquip et.</p>
+  </div>
+  <h1>空心字效果</h1>
+  <div class="box3">
+    <h1>CSS</h1>
+  </div>
+  <h1>发光字效果</h1>
+  <div class="box4">
+    <h1>Glow 你好</h1>
+  </div>
+  <div class="box5">
+    <h1>Dizzy 好的</h1>
+  </div>
+  <div class="box6">
+    <h1>Dizzy 好的</h1>
+  </div>
+  <h1>文字凸起效果</h1>
+  <div class="box7">
+    <h1>CSS3d</h1>
+  </div>
+  <div class="box8">
+    <h1>RETRO</h1>
+  </div>
+  <div class="box9">
+
+  </div>
+</body>
+</html>

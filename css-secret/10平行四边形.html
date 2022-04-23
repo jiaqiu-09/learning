@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .btn1 {
+      margin-left: 50px;
+      width: 70px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: skewX(-45deg);
+      background: aqua;
+      text-align: center;
+    }
+
+    .content1 {
+      display: inline-block;
+      transform: skewX(45deg);
+    }
+
+    .btn2 {
+      margin-left: 50px;
+      width: 70px;
+      height: 30px;
+      text-align: center;
+      display: inline-block;
+      line-height: 30px;
+      position: relative;
+    }
+
+    .btn2::before {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: aqua;
+      transform: skewX(-45deg);
+      content: '';
+      z-index: -1;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <a class="btn1">
+      <div class="content1">click me</div>
+    </a>
+
+    <a class="btn2">click me</a>
+  </div>
+</body>
+</html>

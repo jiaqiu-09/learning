@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* li:nth-child(4) {
+      background-color: red;
+    }
+
+    li:nth-child(4) ~ li {
+      background-color: orange;
+    }
+
+    li:only-child {
+      background-color: navy;
+    } */
+
+    /* li:first-child:nth-last-child(4),
+    li:first-child:nth-last-child(4) ~ li {
+      background-color: red;
+    } */
+
+    /* 当列表至少包含四项时，命中所有列表项 */
+    /* li:first-child:nth-last-child(n+4),
+    li:first-child:nth-last-child(n+4) ~ li {
+      background-color: red;
+    } */
+
+    /* 当列表最多包含四项时，命中所有列表项 */
+    /* li:first-child:nth-last-child(-n+4),
+    li:first-child:nth-last-child(-n+4) ~ li {
+      background-color: orange;
+    } */
+
+    /* 当列表包含2～6项时，命中所有列表项 */
+    li:first-child:nth-last-child(n+2):nth-last-child(-n+6),
+    li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="document.querySelector('ul').appendChild(
+    document.createElement('li')
+  )">add</button>
+  <ul>
+    <li></li>
+  </ul>
+
+</body>
+</html>
