@@ -1,0 +1,21 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01safeHTML.js",
+  "dependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "babel": "^6.23.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "npx babel 05babeltest.js --out-file 05babeltest-compiled.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

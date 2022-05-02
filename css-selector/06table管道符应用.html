@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* col.selected {
+      background: skyblue;
+    } */
+
+    /* seems not working */
+    col.selected || td {
+      background: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <table border="1" width="200">
+    <colgroup>
+      <col span="2">
+      <col class="selected">
+    </colgroup>
+    <tbody>
+      <tr>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td colspan="2">D</td>
+        <td>E</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td colspan="2">G</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
