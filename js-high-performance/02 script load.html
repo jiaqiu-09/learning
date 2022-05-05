@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function loadUrl(url, callback) {
+      let script = document.createElement('script')
+      script.type = 'text/javascript'
+      if (script.readyState) {
+        script.onreadystatechange = function() {
+          if (script.readyState == 'loaded' || script.readyState == 'complete') {
+            script.onreadystatechange = null
+            console.log('11')
+            callback()
+          }
+        }
+      } else {
+        script.onload = function() {
+          console.log('22')
+          callback()
+        }
+      }
+      script.src = url
+      document.getElementsByTagName('head')[0].appendChild(script)
+    }
+
+    loadUrl('./defer.js', function() {
+      alert('loaded')
+    })
+  </script>
+</body>
+</html>
