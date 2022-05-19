@@ -3,6 +3,7 @@ import './App.css';
 import ReactDomFun from './chapter01/01-react-dom-func.js'
 import Test02 from './chapter02/01非受控组件.js'
 import Test03 from './chapter02/02classnames.js'
+import Test04 from './chapter02/03组件传值.js'
 
 function App() {
   useEffect(() => {
@@ -13,6 +14,7 @@ function App() {
       <ReactDomFun></ReactDomFun>
       <Test02></Test02>
       <Test03></Test03>
+      <Test04></Test04>
     </div>
   );
 }
