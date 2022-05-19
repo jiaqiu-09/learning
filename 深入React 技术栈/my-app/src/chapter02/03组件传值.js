@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import emitter from "../emitter";
 
 export default class Index extends Component {
 
   handleClick = (a) => {
-    alert('ss' + a)
+    console.log('clicked')
+    emitter.emit('childClick', a)
   }
 
   render() {

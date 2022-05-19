@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import classNames from 'classnames'
 import styles from './test02.module.css'
-
+import emitter from "../emitter";
 export default class Index extends Component {
 
   constructor(props) {
@@ -10,6 +10,17 @@ export default class Index extends Component {
       showBlue: true,
       bigFont: true
     }
+  }
+
+  componentDidMount() {
+    emitter.on('childClick', (data) => {
+      console.log('---childClick---', data)
+    })
+  }
+
+  componentWillUnmount() {
+    emitter.removeListener('childClick', () => {})
+    // emitter.off('childClick', () => {})
   }
 
   changeBlue = () => {
