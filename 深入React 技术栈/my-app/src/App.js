@@ -8,6 +8,7 @@ import Test05 from './chapter02/04hocprops.js'
 import Test06 from './chapter02/05hocrefs.js'
 import Test07 from './chapter02/06hocInput.js'
 import Test08 from './chapter02/07hoc02.js'
+import Test09 from './chapter02/08hocwithparam.js'
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
       <Test06></Test06>
       <Test07></Test07>
       <Test08 age={18}></Test08>
+      <Test09></Test09>
     </div>
   );
 }
