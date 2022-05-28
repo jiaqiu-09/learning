@@ -43,8 +43,7 @@ export default {
       this.list.push({name: 'c', age: Math.round((Math.random() * 10))})
     },
     objAdd() {
-      // this.nameObj.b = 'b'
-      this.$set(this.nameObj, 'b', Math.round((Math.random() * 10)))
+      this.nameObj.b = 'b'
     }
   },
 }
