@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let observer = new MutationObserver((records) => records.map(x => console.log(x)))
+    let childA = document.createElement('div'), 
+    childB = document.createElement('span'); 
+    document.body.appendChild(childA); 
+    document.body.appendChild(childB);
+
+    observer.observe(document.body, {childList: true, subtree: true, attributes: true})
+
+    setTimeout(() => {
+      document.body.insertBefore(childB, childA)
+    }, 3000)
+
+    setTimeout(() => {
+      document.body.removeChild(childB)
+
+      childB.setAttribute('foo', 'foo')
+    }, 4000)
+
+    // observer.observe(childA, { attributes: true }); 
+    // observer.observe(childB, { attributes: true }); 
+    // observer.disconnect(); 
+
+    // observer.observe(childA, { attributes: true }); 
+    // observer.observe(childB, { attributes: true }); 
+
+    // childA.setAttribute('foo', 'bar'); 
+    // childB.setAttribute('foo', 'bar'); 
+  </script>
+</body>
+</html>

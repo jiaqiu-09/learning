@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img id="img01" name="img01" alt="img01" />
+  <img name="img02" alt="img02" />
+  <img name="img03" alt="img03" />
+  <img name="img04" alt="img04" />
+  <img name="img05" alt="img05" />
+
+  <div id="btn1" onclick="clickTest()">click me!</div>
+  <div id="btn2" ></div>
+
+  <script>
+    let images = document.getElementsByTagName('img')
+    console.log('images: ', images)
+
+    let img01 = images.item(0)
+    console.log('img01: ', img01)
+
+    let img02 = images.namedItem('img02')
+    console.log('img02: ', img02)
+
+    let img03 = images['img03']
+    console.log('img03: ', img03)
+
+    document.write("Hello World!");
+    document.write("Have a nice day!");
+    document.write("<br>");
+    document.writeln("Hello World!");
+    document.writeln("<p id=\"p1\">Have a nice day!</p>");
+
+    let tag01 = document.getElementById('img01')
+    // tag01.data_id = 'das'
+    // console.log('tag01: ', tag01.getAttribute('data_id'))
+    tag01.setAttribute('data_id', 'das')
+    console.log('tag01: ', tag01.getAttribute('data_id'))
+    console.log('tag01: ', tag01.tagName)
+
+    let p1 = document.getElementById('p1')
+    p1.dir = 'rtl'
+    p1.lang = 'fr'
+
+
+    function clickTest() {
+      alert('click me!')
+    }
+
+    let btn1 = document.getElementById('btn1')
+    console.log('btn1: ', btn1.getAttribute('onclick'))
+    console.log('btn1.nodeType: ', btn1.nodeType)
+    console.log('btn1.child.nodeType: ',  btn1.childNodes[0].nodeType)
+
+    let btn2 = document.getElementById('btn2')
+    console.log('btn2.nodeType: ', btn2.nodeType)
+    console.log('btn2.child.nodeType: ', btn2.childNodes.length > 0 ? btn2.childNodes[0].nodeType : null)
+
+    btn1.setAttribute('onclick', 'alert("click me2!")')
+
+
+    let element = document.createElement("div"); 
+    element.className = "message"; 
+    let textNode = document.createTextNode("<strong>Hello World!</strong>"); 
+    element.appendChild(textNode); 
+    document.body.appendChild(element); 
+  </script>
+</body>
+</html>

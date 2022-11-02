@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas" height="512" width="512"></canvas>
+  <canvas id="canvas2" height="512" width="512"></canvas>
+  <script>
+
+    let canvas = document.getElementById('canvas')
+    let imgData = null
+    if (canvas.getContext) {
+      context = canvas.getContext('2d')
+      console.log('context: ', context)
+      let img = new Image()
+      img.src = './1.png'
+      img.onload = () => {
+        let pattern = context.createPattern(img, 'repeat')
+        context.fillStyle = pattern
+        context.fillRect(0,0, 512, 512)
+
+        let imgData = context.getImageData(0, 0, 512, 512)
+        console.log(imgData)
+
+        let canvas2 = document.getElementById('canvas2')
+        if (canvas2.getContext) {
+          console.log('imgData: ', imgData)
+          let context2 = canvas2.getContext('2d')
+
+          let data = imgData.data
+          let red = data[0]
+          let green = data[1]
+          let blue = data[2]
+          let alpha = data[3]
+          let average;
+
+          for(let i = 0, len = imgData.length; i < len; i += 4) {
+            red = data[i]
+            green = data[i + 1]
+            blue = data[i + 2]
+            alpha = data[i + 3]
+
+            // 取得 RGB 平均值
+            average = Math.floor((red + green + blue) / 3);
+
+            // 设置颜色，不管透明度
+            data[i] = average;
+            data[i+1] = average;
+            data[i+2] = average;
+          }
+
+          // 将修改后的数据写回 ImageData 并应用到画布上显示出来
+          imgData.data = data;
+          context2.putImageData(imgData, 0, 0);
+
+        }
+      }
+    }
+
+
+    
+  </script>
+</body>
+</html>

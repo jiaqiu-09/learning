@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="arrow">-----></div>
+  <script>
+    window.addEventListener('load', (event) => {
+      let div = document.createElement('div')
+      
+      div.innerHTML = 'current orientation is: ' + window.orientation
+      document.body.appendChild(div)
+
+      div.addEventListener('beforecopy', (event) => {
+        console.log('---', event)
+        event.preventDefault()
+        return null
+      })
+
+      window.addEventListener('orientationchange', (event) => {
+        div.innerHTML = 'current orientation is: ' + window.orientation
+      })
+
+      
+      if (window.DeviceOrientationEvent) {
+        // seems not working
+        window.addEventListener("deviceorientation", (event) => { 
+          let arrow = document.getElementById("arrow"); 
+          arrow.innerHTML = '------>' + Math.round(event.alpha)
+          arrow.style.webkitTransform = `rotate(${Math.round(event.alpha)}deg)`; 
+        }, true);
+      }
+       
+
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <input placeholder="input something" />
+    <input type="reset" value="Reset Form"/>
+    <div>header</div>
+    <!-- <input placeholder="name"/> -->
+
+  </form>
+
+  <script type="text/javascript">
+    console.log('===')
+    let textbox = document.forms[0].elements[0];
+    textbox.addEventListener("focus", (event) => {
+    let target = event.target;
+    if (target.style.backgroundColor != "red") {
+    target.style.backgroundColor = "yellow";
+    }
+    });
+    textbox.addEventListener("blur", (event) => {
+    // let target = event.target;
+    // console.log('blur target.value: ', target.value)
+    // target.style.backgroundColor = /[^\d]/.test(target.value) ? "red" : "";
+    });
+    textbox.addEventListener("change", (event) => {
+      // let target = event.target;
+      // console.log('focus target.value: ', target.value)
+      // target.style.backgroundColor = /[^\d]/.test(target.value) ? "red" : "";      
+    });
+
+    textbox.addEventListener('focus', () => {
+      // setTimeout(() => {
+        textbox.setSelectionRange(3, 8)
+      // }, 0)
+    })
+
+    // textbox.addEventListener('select', (event) => {
+    //   console.log('Text selected: ', textbox.value)
+    //   console.log('Text selected is : ', textbox.value.substring(textbox.selectionStart, textbox.selectionEnd))
+    // })
+  </script>
+</body>
+</html>

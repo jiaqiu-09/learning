@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="div1" style="width: 1000px;height: 2000px;">hello</div>
+  <button id="btn1">btn1</button>
+  <script>
+    let div = document.getElementById('div1')
+    div.addEventListener('focusin', function() {
+      console.log('000')
+    })
+    div.addEventListener('dblclick', function() {
+      console.log('dblclick')
+    })
+    div.addEventListener('click', function(e) {
+      console.log('e.page ', e.pageX, e.pageY)
+      console.log('e.screen ', e.screenX, e.screenY)
+    })
+
+    let btn1 = document.getElementById('btn1')
+    btn1.addEventListener('focusin', function() {
+      console.log('111', document.activeElement)
+    })
+    btn1.addEventListener('focusout', function() {
+      console.log('222')
+    })
+  </script>
+</body>
+</html>

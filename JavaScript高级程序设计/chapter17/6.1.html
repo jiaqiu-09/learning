@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="btn" onclick="alert('---')">click me</div>
+  <input placeholder="input something" id="input" />
+  <script>
+    let btn = document.getElementById('btn')
+
+    // mouseEvent
+    // let event = document.createEvent('MouseEvents')
+    // event.initEvent('click')
+    // setTimeout(() => {
+    //   btn.dispatchEvent(event)
+    // }, 1000)
+
+    // inputEvent
+    let input = document.getElementById('input')
+    input.addEventListener('input', (e) => {
+      console.log('eee: ', e)
+    })
+    let event = document.createEvent('Event')
+    event.initEvent('input', true, true); 
+    event.keyCode = 65; 
+    // event.charCode = 65;
+    setTimeout(() => {
+      console.log('-- can trigger input, but can not see value in the page')
+      input.dispatchEvent(event)
+    }, 1000)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window.moveTo/moveBy case</title>
+</head>
+<body>
+  <button onclick="onCreateWindow()">create window</button>
+  <button onclick="onMoveWindow()">moveTo window</button>
+  <button onclick="onMoveByWindow()">moveBy window</button>
+  <script>
+    var win;
+    function onCreateWindow() {
+      win = window.open('', 'win', 'width=400, height=400');
+      win.document.write('<h1>Hello World</h1>');
+    }
+
+    function onMoveWindow() {
+      window.win.moveTo(100, 100);
+    }
+
+    function onMoveByWindow() {
+      window.win.moveBy(100, 100);
+    }
+  </script>
+</body>
+</html>

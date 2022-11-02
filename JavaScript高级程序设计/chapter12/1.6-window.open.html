@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window.open()</title>
+</head>
+<body>
+  <button onclick="open1()">window.open</button>
+  <button onclick="open2()">window.open 独立窗口</button>
+  <button onclick="open3()">window.open name = main</button>
+  <button onclick="open4()">window.open opener</button>
+  <button onclick="open5()">window.open detection</button>
+  <button onclick="print()">window.print</button>
+  <script>
+    window.name = 'main';
+    function open1() {
+      // 默认在新标签中打开
+      window.open('https://www.baidu.com/', 'topFrame2');
+    }
+
+    function open2() {
+      // 设置第三个属性 宽高
+      window.open('https://www.baidu.com/', 'topFrame3', 'width=400, height=400');
+    }
+
+    function open3() {
+      // 第二个参数为窗口的名称 
+      window.open('https://www.baidu.com/', 'main', 'width=400, height=400');
+    }
+
+    function open4() {
+      let win = window.open('https://www.google.com/', 'topFrame4', 'width=400, height=400, top=100, left=100');
+      alert(win.opener === window);
+    }
+
+    function open5() {
+      let blocked = false;
+      try {
+        let wroWin = window.open('http://www/wrox.com', '_blank', 'width=400')
+        if (wroWin == null) {
+          blocked = true;
+        }
+      } catch (e) {
+        blocked = true;
+      }
+
+      if (blocked) {
+        alert('The popup was blocked');
+      }
+    }
+
+    function print() {
+      window.prompt('请输入你的名字', '张三');
+      // window.print();
+    }
+  </script>
+</body>
+</html>

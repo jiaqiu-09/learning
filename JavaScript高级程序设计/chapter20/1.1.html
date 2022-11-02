@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 这个 case 不起作用 查看 test文件夹
+    const workerScript = `
+    self.onmessage = ({data}) => {
+    const view = new Uint32Array(data);
+    console.log('data: ', data);
+    // 执行 1 000 000 次加操作
+    view[0] += 1;
+    for (let i = 0; i < 10; ++i) {
+    // 线程不安全加操作会导致资源争用
+    console.log('===');
+    data[0] += 1;
+    // Atomics.add(view, 0, 1);
+    }
+    self.postMessage(null);
+    };
+    `;
+    // if(!crossOriginIsolated) {
+    //   SharedArrayBuffer = ArrayBuffer;
+    // }
+    const workerScriptBlobUrl = URL.createObjectURL(new Blob([workerScript]));
+    // 创建容量为 4 的工作线程池
+    const workers = [];
+    for (let i = 0; i < 4; ++i) {
+      workers.push(new Worker(workerScriptBlobUrl));
+    }
+    // 在最后一个工作线程完成后打印出最终值
+    let responseCount = 0;
+    for (const worker of workers) {
+      console.log('--- ', worker)
+      worker.onmessage = (data) => {
+        console.log('responseCount: ', responseCount, view, data)
+        if (++responseCount == workers.length) {
+          console.log(`Final buffer value: ${view[0]}`);
+        }
+      };
+    }
+    // 初始化 SharedArrayBuffer
+    const sharedArrayBuffer = new SharedArrayBuffer(4);
+    const view = new Uint32Array(sharedArrayBuffer);
+    view[0] = 1;
+    // const view = [1]
+    // 把 SharedArrayBuffer 发送到每个工作线程
+    for (const worker of workers) {
+      worker.postMessage(view);
+    }
+    //（期待结果为 4000001。实际输出可能类似这样：）
+    // Final buffer value: 2145106
+  </script>
+</body>
+
+</html>

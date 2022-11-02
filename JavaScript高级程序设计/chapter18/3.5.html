@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="drawing" height="300"></canvas>
+  <canvas id="drawing2" height="300"></canvas>
+  <script>
+    let drawing = document.getElementById("drawing"); 
+    // 确保浏览器支持<canvas> 
+    if (drawing.getContext) { 
+      let context = drawing.getContext("2d"); 
+      // 创建路径
+      context.beginPath(); 
+      // 绘制外圆
+      context.arc(100, 100, 99, 0, 2 * Math.PI, false); 
+      // 绘制内圆
+      context.moveTo(194, 100); 
+      context.arc(100, 100, 94, 0, 2 * Math.PI, false); 
+      // // 移动原点到表盘中心
+      context.translate(100, 100); 
+      // 旋转表针
+      context.rotate(90 * Math.PI / 180);
+      // // 绘制分针
+      context.moveTo(0, 0); 
+      context.lineTo(0, -85); 
+      // // 绘制时针
+      context.moveTo(0, 0); 
+      context.lineTo(-65, 0); 
+      // 描画路径
+      context.stroke(); 
+    } 
+
+    let drawing2 = document.getElementById('drawing2')
+    if (drawing2.getContext) {
+      let context = drawing2.getContext('2d')
+      context.drawImage(drawing, 0, 0, 100, 100, 100, 0 ,20, 40);
+    }
+  </script>
+</body>
+</html>
