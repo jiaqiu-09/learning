@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // case 1
+    // performance.mark('foo');
+    // for (let i = 0; i < 1E6; ++i) {}
+    // performance.mark('bar');
+    // performance.measure('baz', 'foo', 'bar');
+    // const [differenceMark] = performance.getEntriesByType('measure');
+    // console.log(differenceMark);
+    // // PerformanceMeasure {
+    // // name: "baz",
+    // // entryType: "measure",
+    // // startTime: 298.9800000214018,
+    // // duration: 1.349999976810068
+    // // } 
+
+    // case 2
+    // loadEventStart 和 loadEventEnd 时间戳之间的差
+    const [performanceNavigationTimingEntry] = performance.getEntriesByType('navigation');
+    console.log(performanceNavigationTimingEntry);
+    // PerformanceNavigationTiming {
+    // connectEnd: 2.259999979287386
+    // connectStart: 2.259999979287386
+    // decodedBodySize: 122314
+    // domComplete: 631.9899999652989
+    // domContentLoadedEventEnd: 300.92499998863786
+    // domContentLoadedEventStart: 298.8950000144541
+    // domInteractive: 298.88499999651685
+    // domainLookupEnd: 2.259999979287386
+    // domainLookupStart: 2.259999979287386
+    // duration: 632.819999998901
+    // encodedBodySize: 21107
+    // entryType: "navigation"
+    // fetchStart: 2.259999979287386
+    // initiatorType: "navigation"
+    // loadEventEnd: 632.819999998901
+    // loadEventStart: 632.0149999810383
+    // name: " https://foo.com "
+    // nextHopProtocol: "h2"
+    // redirectCount: 0
+    // redirectEnd: 0
+    // redirectStart: 0
+    // requestStart: 7.7099999762140214
+    // responseEnd: 130.50999998813495
+    // responseStart: 127.16999999247491
+    // secureConnectionStart: 0
+    // serverTiming: []
+    // startTime: 0
+    // transferSize: 21806
+    // type: "navigate"
+    // unloadEventEnd: 132.73999997181818
+    // unloadEventStart: 132.41999997990206
+    // workerStart: 0
+    // }
+    console.log(performanceNavigationTimingEntry.loadEventEnd - performanceNavigationTimingEntry.loadEventStart);
+    // 0.805000017862767
+  </script>
+</body>
+
+</html>

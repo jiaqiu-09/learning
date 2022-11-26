@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 文本编码
+    // case1
+    // const textEncoder = new TextEncoder();
+    // const decodedText = 'foo';
+    // const encodedText = textEncoder.encode(decodedText);
+    // // f 的 UTF-8 编码是 0x66（即十进制 102）
+    // // o 的 UTF-8 编码是 0x6F（即二进制 111）
+    // console.log(encodedText); // Uint8Array(3) [102, 111, 111]
+
+    // case2
+    // const textEncoder = new TextEncoder();
+    // const decodedText = '☺';
+    // const encodedText = textEncoder.encode(decodedText);
+    // // ☺的 UTF-8 编码是 0xF0 0x9F 0x98 0x8A（即十进制 240、159、152、138）
+    // console.log(encodedText); // Uint8Array(4) [240, 159, 152, 138]
+
+    // 解码
+    // case3
+    // const textDecoder = new TextDecoder();
+    // // f 的 UTF-8 编码是 0x66（即十进制 102）
+    // // o 的 UTF-8 编码是 0x6F（即二进制 111）
+    // const encodedText = Uint8Array.of(102, 111, 111);
+    // const decodedText = textDecoder.decode(encodedText);
+    // console.log(decodedText); // foo
+
+    // case4
+    const textDecoder = new TextDecoder();
+    // f 的 UTF-8 编码是 0x66（即十进制 102）
+    // o 的 UTF-8 编码是 0x6F（即二进制 111）
+    const encodedText = Uint32Array.of(102, 111, 111);
+    const decodedText = textDecoder.decode(encodedText);
+    console.log(decodedText); // "f o o "
+
+  </script>
+</body>
+</html>
